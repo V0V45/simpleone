@@ -1,0 +1,25 @@
+.container {
+    padding: 10px 16px;
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+    font-family: var(--fontFamilyMain);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    color: var(--textNeutralMain);
+}
+
+.title::marker {
+    content: "";
+}
+
+.arrow {
+    margin-right: 8px;
+}
