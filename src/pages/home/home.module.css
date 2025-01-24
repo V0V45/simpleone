@@ -19,3 +19,68 @@
     align-items: center;
     margin: 8px 16px 8px 0;
 }
+
+.headerSearchField {
+    width: 296px;
+}
+
+.settingsButton {
+    margin-left: 8px;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.navigationBar {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    border-right: 1px solid var(--borderDefault);
+    height: 100vh; /* TODO: высота? */
+}
+
+.hidden {
+    display: none;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+
+}
+
+.filterContainer {
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    border-right: 1px solid var(--borderDefault);
+    border-bottom: 1px solid var(--borderDefault);
+}
+
+.unpinButton {
+    margin-left: 8px;
+}
+
+.spoilersContainer {
+    height: 100vh; /* TODO: высота? */
+    background-color: var(--backgroundInputDefault);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-right: 1px solid var(--borderDefault);
+}
