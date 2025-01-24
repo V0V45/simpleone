@@ -1,0 +1,10 @@
+.button {
+    border: 1px solid var(--borderDefault);
+    border-radius: 4px;
+    padding: 6px;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
