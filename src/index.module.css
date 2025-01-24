@@ -1,0 +1,25 @@
+:root {
+  --borderDefault: #d5d8dd;
+  --backgroundInputDefault: #fcfcfd;
+  --textNeutralMask: #abb1ba;
+  --textNeutralMain: #2e3238;
+  --fontFamilyMain: "Open Sans", sans-serif;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-weight: 400;
+  src: url("../src/assets/fonts/open-sans/open-sans-regular.ttf");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-weight: 600;
+  src: url("../src/assets/fonts/open-sans/open-sans-semibold.ttf");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}

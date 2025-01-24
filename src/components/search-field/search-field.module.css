@@ -1,0 +1,34 @@
+.container {
+    background-color: var(--backgroundInputDefault);
+    border: 1px solid var(--borderDefault);
+    border-radius: 4px;
+    padding: 6px 8px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.searchField {
+    font-family: var(--fontFamilyMain);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    background-color: transparent;
+    border: none;
+    color: var(--textNeutralMask);
+}
+
+.searchField:focus {
+    border: none;
+    outline: none;
+}
+
+.button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}

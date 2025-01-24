@@ -1,0 +1,21 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--borderDefault);
+}
+
+.logo {
+    margin: 12px 0 12px 16px;
+}
+
+.rightPart {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 8px 16px 8px 0;
+}

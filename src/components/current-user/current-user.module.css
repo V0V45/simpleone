@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 16px;
+}
+
+.avatar {
+    border-radius: 100%;
+    margin-right: 8px;
+    width: 32px;
+    height: 32px;
+}
+
+.userName {
+    font-family: var(--fontFamilyMain);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    color: var(--textNeutralMain);
+}
