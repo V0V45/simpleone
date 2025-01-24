@@ -4,6 +4,8 @@
   --textNeutralMask: #abb1ba;
   --textNeutralMain: #2e3238;
   --fontFamilyMain: "Open Sans", sans-serif;
+  --iconNeutralDefault: #2E3238;
+  --iconAccentBlue: #005999;
 }
 
 @font-face {
