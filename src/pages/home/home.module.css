@@ -29,11 +29,12 @@
 }
 
 .main {
+    height: 100vh;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: stretch;
 }
 
 .navigationBar {
@@ -43,8 +44,7 @@
     justify-content: flex-start;
     align-items: center;
     border-right: 1px solid var(--borderDefault);
-    height: 100vh;
-    /* TODO: высота? */
+    height: 100%;
 }
 
 .hidden {
@@ -76,8 +76,7 @@
 }
 
 .spoilersContainer {
-    height: 100vh;
-    /* TODO: высота? */
+    height: 100%;
     background-color: var(--backgroundInputDefault);
     display: flex;
     flex-direction: column;
