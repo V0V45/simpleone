@@ -74,6 +74,9 @@ export default function Home() {
             <TextField className={classes.notes} mb title="Рабочие заметки" isRequired />
             <TextField className={classes.priority} mb title="Приоритет" />
             <TextFieldObjective className={classes.responsible} mb title="Ответственный" />
+            <TextFieldObjective className={classes.group} mb title="Группа" />
+            <TextField className={classes.comments} mb title="Комментарий" />
+            <TextFieldObjective className={classes.coordinating} mb title="Согласующие" />
           </section>
         </section>
       </main>
