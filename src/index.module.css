@@ -1,11 +1,17 @@
 :root {
   --borderDefault: #d5d8dd;
+  --borderBadgeDefault: #99D5FF;
   --backgroundInputDefault: #fcfcfd;
+  --backgroundBadgeDefault: #E5F4FF;
+  --textNeutralInverse: #fff;
   --textNeutralMask: #abb1ba;
   --textNeutralMain: #2e3238;
+  --textAccentRed: #b21f00;
   --fontFamilyMain: "Open Sans", sans-serif;
+  --fontFamilyTitle: "Montserrat", sans-serif;
   --iconNeutralDefault: #2E3238;
   --iconAccentBlue: #005999;
+  --buttonPrimaryDefault: #0078cf;
 }
 
 @font-face {
@@ -18,6 +24,18 @@
   font-family: "Open Sans";
   font-weight: 600;
   src: url("../src/assets/fonts/open-sans/open-sans-semibold.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 400;
+  src: url("../src/assets/fonts/montserrat/montserrat-regular.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 600;
+  src: url("../src/assets/fonts/montserrat/montserrat-semibold.ttf");
 }
 
 * {
