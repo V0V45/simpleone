@@ -28,7 +28,12 @@ export default function TextFieldObjective({ className, mb, title, isRequired })
                     <div className={classes.inputs}>
                         {inputsValues.map((inputValue, index) => {
                             return (
-                                <TextFieldSmall key={index} className={classes.textFieldSmall} value={inputValue} onChange={(event) => handleChange(event, index)} />
+                                <TextFieldSmall
+                                    key={index}
+                                    className={classes.textFieldSmall}
+                                    value={inputValue}
+                                    onChange={(event) => handleChange(event, index)}
+                                />
                             );
                         })}
                     </div>

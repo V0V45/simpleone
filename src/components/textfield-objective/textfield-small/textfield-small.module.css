@@ -13,3 +13,18 @@
 .input:focus {
     outline: none;
 }
+
+.wrapper {
+    position: relative;
+}
+
+.hidden {
+    visibility: hidden;
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+    font-family: var(--fontFamilyMain);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+}
