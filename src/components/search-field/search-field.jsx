@@ -1,5 +1,5 @@
 import classes from "./search-field.module.css";
-import searchIcon from "../../assets/icons/search-icon.svg";
+import searchIcon from "../../assets/icons/search-icon-gray.svg";
 import filterIcon from "../../assets/icons/filter-icon.svg";
 
 export default function SearchField({className, icon, placeholder}) {
