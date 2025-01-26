@@ -7,6 +7,9 @@ import IconButton from "../../components/icon-button/icon-button";
 import NavigationButton from "../../components/navigation-button/navigation-button";
 import { useState } from "react";
 import Spoiler from "../../components/spoiler/spoiler";
+import TextButton from "../../components/text-button/text-button";
+import TextField from "../../components/textfield/textfield";
+import TextFieldObjective from "../../components/textfield-objective/textfield-objective";
 
 export default function Home() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -50,6 +53,28 @@ export default function Home() {
             <Spoiler title="Управление уровнем услуг"></Spoiler>
             <Spoiler title="Настройка соответствий"></Spoiler>
           </div>
+        </section>
+        <section className={classes.mainContent}>
+          <section className={classes.upperMenu}>
+            <div className={classes.upperMenuLeftSide}>
+              <h3 className={classes.upperMenuLeftSideTitle}>Подзадача</h3>
+              <TextButton>Создать</TextButton>
+            </div>
+            <div className={classes.upperMenuRightSide}>
+              <TextButton accent className={classes.saveButton}>Сохранить</TextButton>
+              <TextButton>Сохранить и выйти</TextButton>
+            </div>
+          </section>
+          <section className={classes.table}>
+            <h2 className={classes.tableTitle}>STSK0004783 На инциденте, запросе, проблеме, в статусе закрыто некоторые поля остаются редактируемыми для агента если он Caller</h2>
+            <TextField className={classes.theme} mb title="Тема" isRequired />
+            <TextField className={classes.status} mb title="Статус" />
+            <TextField className={classes.description} mb title="Описание" />
+            <TextField className={classes.product} mb title="Продукт" button="search" />
+            <TextField className={classes.notes} mb title="Рабочие заметки" isRequired />
+            <TextField className={classes.priority} mb title="Приоритет" />
+            <TextFieldObjective className={classes.responsible} mb title="Ответственный" />
+          </section>
         </section>
       </main>
     </>

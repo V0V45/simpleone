@@ -43,7 +43,8 @@
     justify-content: flex-start;
     align-items: center;
     border-right: 1px solid var(--borderDefault);
-    height: 100vh; /* TODO: высота? */
+    height: 100vh;
+    /* TODO: высота? */
 }
 
 .hidden {
@@ -75,7 +76,8 @@
 }
 
 .spoilersContainer {
-    height: 100vh; /* TODO: высота? */
+    height: 100vh;
+    /* TODO: высота? */
     background-color: var(--backgroundInputDefault);
     display: flex;
     flex-direction: column;
@@ -83,4 +85,141 @@
     justify-content: flex-start;
     align-items: flex-start;
     border-right: 1px solid var(--borderDefault);
+}
+
+.mainContent {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    flex-grow: 1;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 16px;
+}
+
+.upperMenu {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.upperMenuLeftSide {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.upperMenuLeftSideTitle {
+    font-family: var(--fontFamilyTitle);
+    font-weight: 400;
+    font-size: 20px;
+    color: var(--textNeutralMain);
+    margin: 4px 16px 4px 0;
+}
+
+.upperMenuRightSide {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.saveButton {
+    margin-right: 4px;
+}
+
+.table {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 16px 1fr;
+    grid-template-rows: auto-fill;
+    grid-template-areas: 
+        "tableTitle tableTitle tableTitle"
+        "theme . status"
+        "description . product"
+        "notes. priority"
+        "responsible . group"
+        "comments comments comments"
+        "coordinating coordinating coordinating"
+        "whenOpened . whenCreated"
+        "whoOpened . whoCreated";
+    justify-content: stretch;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+.tableTitle {
+    grid-area: tableTitle;
+    font-family: var(--fontFamilyTitle);
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 133%;
+    color: var(--textNeutralMain);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 24px;
+}
+
+.theme {
+    grid-area: theme;
+}
+
+.status {
+    grid-area: status;
+}
+
+.description {
+    grid-area: description;
+}
+
+.product {
+    grid-area: product;
+}
+
+.notes {
+    grid-area: notes;
+}
+
+.priority {
+    grid-area: priority;
+}
+
+.responsible {
+    grid-area: responsible;
+}
+
+.group {
+    grid-area: group;
+}
+
+.comments {
+    grid-area: comments;
+}
+
+.coordinating {
+    grid-area: coordinating;
+}
+
+.whenOpened {
+    grid-area: whenOpened;
+}
+
+.whenCreated {
+    grid-area: whenCreated;
+}
+
+.whoOpened {
+    grid-area: whoOpened;
+}
+
+.whoCreated {
+    grid-area: whoCreated;
 }
