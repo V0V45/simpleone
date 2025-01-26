@@ -77,6 +77,10 @@ export default function Home() {
             <TextFieldObjective className={classes.group} mb title="Группа" />
             <TextField className={classes.comments} mb title="Комментарий" />
             <TextFieldObjective className={classes.coordinating} mb title="Согласующие" />
+            <TextField className={classes.whenOpened} mb title="Когда открыто" button="calendar" />
+            <TextField className={classes.whenCreated} mb title="Когда создано" button="calendar" />
+            <TextFieldObjective className={classes.whoOpened} mb title="Кем открыто" />
+            <TextFieldObjective className={classes.whoCreated} mb title="Кем создано" />
           </section>
         </section>
       </main>
