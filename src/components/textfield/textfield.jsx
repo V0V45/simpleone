@@ -18,6 +18,7 @@ export default function TextField({ className, mb, title, isRequired, button }) 
             <div className={classes.inputContainer}>
                 <input id={title} className={classes.input} type="text" onChange={handleChange} value={value} />
                 {button === "search" && <IconButton icon="search" className={classes.button} />}
+                {button === "calendar" && <IconButton icon="calendar" className={classes.button} />}
             </div>
         </div>
     );
