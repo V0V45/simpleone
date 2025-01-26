@@ -1,0 +1,15 @@
+.input {
+    border: 1px solid var(--borderBadgeDefault);
+    border-radius: 4px;
+    padding: 2px 8px;
+    background-color: var(--backgroundBadgeDefault);
+    font-family: var(--fontFamilyMain);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    color: var(--textNeutralMain);
+}
+
+.input:focus {
+    outline: none;
+}
