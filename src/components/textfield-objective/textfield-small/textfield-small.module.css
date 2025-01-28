@@ -1,8 +1,6 @@
 .input {
-    border: 1px solid var(--borderBadgeDefault);
-    border-radius: 4px;
-    padding: 2px 8px;
-    background-color: var(--backgroundBadgeDefault);
+    border: none;
+    background-color: transparent;
     font-family: var(--fontFamilyMain);
     font-weight: 400;
     font-size: 14px;
@@ -27,4 +25,35 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 143%;
+}
+
+.removeButton {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 8px;
+}
+
+.inputWrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2px 8px;
+}
+
+.wrapperOnFocus {
+    background-color: var(--buttonPrimaryDefault);
+    border: 1px solid var(--buttonPrimaryDefault);
+    border-radius: 4px;
+}
+
+.wrapperWithoutFocus {
+    background-color: var(--backgroundBadgeDefault);
+    border: 1px solid var(--borderBadgeDefault);
+    border-radius: 4px;
 }
