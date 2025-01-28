@@ -30,7 +30,8 @@
     align-items: stretch;
 }
 
-.input {
+.input,
+.dateInput {
     background-color: var(--backgroundInputDefault);
     border: 1px solid var(--borderDefault);
     border-radius: 4px;
@@ -40,10 +41,19 @@
     font-size: 14px;
     line-height: 143%;
     color: var(--textNeutralMain);
+}
+
+.input,
+.dateInputWrapper {
     flex-grow: 1;
 }
 
-.input:focus {
+.dateInput {
+    width: 100%;
+}
+
+.input:focus,
+.dateInput:focus {
     outline: none;
 }
 
