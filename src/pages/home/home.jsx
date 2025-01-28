@@ -76,7 +76,7 @@ export default function Home() {
             <TextFieldObjective className={classes.responsible} mb title="Ответственный" />
             <TextFieldObjective className={classes.group} mb title="Группа" />
             <TextField className={classes.comments} mb title="Комментарий" />
-            <TextFieldObjective className={classes.coordinating} mb title="Согласующие" />
+            <TextFieldObjective className={classes.coordinating} mb title="Согласующие" isRemoveButtonAvailable />
             <TextField className={classes.whenOpened} mb title="Когда открыто" button="calendar" />
             <TextField className={classes.whenCreated} mb title="Когда создано" button="calendar" />
             <TextFieldObjective className={classes.whoOpened} mb title="Кем открыто" />
