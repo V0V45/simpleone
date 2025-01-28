@@ -4,7 +4,7 @@ import clearIcon from "../../assets/icons/clear-icon.svg";
 import IconButton from "../icon-button/icon-button";
 import TextFieldSmall from "./textfield-small/textfield-small";
 
-export default function TextFieldObjective({ className, mb, title, isRequired }) {
+export default function TextFieldObjective({ className, mb, title, isRequired, isRemoveButtonAvailable }) {
     const [inputsValues, setInputsValues] = useState([""]);
 
     function addField() {
@@ -14,6 +14,12 @@ export default function TextFieldObjective({ className, mb, title, isRequired })
     function handleChange(event, index) {
         const newInputsValues = [...inputsValues];
         newInputsValues[index] = event.target.value;
+        setInputsValues(newInputsValues);
+    }
+
+    function handleRemove(index) {
+        const newInputsValues = [...inputsValues];
+        newInputsValues.splice(index, 1);
         setInputsValues(newInputsValues);
     }
 
@@ -33,6 +39,8 @@ export default function TextFieldObjective({ className, mb, title, isRequired })
                                     className={classes.textFieldSmall}
                                     value={inputValue}
                                     onChange={(event) => handleChange(event, index)}
+                                    onRemoveButtonClick={() => handleRemove(index)}
+                                    isRemoveButtonAvailable={isRemoveButtonAvailable}
                                 />
                             );
                         })}
