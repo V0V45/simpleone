@@ -154,6 +154,29 @@
     align-items: stretch;
 }
 
+@media screen and (max-width: 991px) {
+    .table {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto-fill;
+        grid-template-areas: 
+            "tableTitle"
+            "theme"
+            "status"
+            "description"
+            "product"
+            "notes"
+            "priority"
+            "responsible"
+            "group"
+            "comments"
+            "coordinating"
+            "whenOpened"
+            "whenCreated"
+            "whoOpened"
+            "whoCreated";
+    }
+}
+
 .tableTitle {
     grid-area: tableTitle;
     font-family: var(--fontFamilyTitle);

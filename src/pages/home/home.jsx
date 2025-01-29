@@ -5,30 +5,51 @@ import avatarExample from "../../assets/images/avatar-example.jpg";
 import CurrentUser from "../../components/current-user/current-user";
 import IconButton from "../../components/icon-button/icon-button";
 import NavigationButton from "../../components/navigation-button/navigation-button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Spoiler from "../../components/spoiler/spoiler";
 import TextButton from "../../components/text-button/text-button";
 import TextField from "../../components/textfield/textfield";
 import TextFieldObjective from "../../components/textfield-objective/textfield-objective";
+import { useDeviceDetect } from "../../hooks/useDeviceDetect";
 
 export default function Home() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const { isSmallScreen, isMobile, isSmallMobile } = useDeviceDetect();
+
+  useEffect(() => {
+    if (isSmallScreen || isMobile || isSmallMobile) {
+      setIsSidebarOpen(false);
+    } else {
+      setIsSidebarOpen(true);
+    }
+  }, [isSmallScreen, isMobile, isSmallMobile]);
 
   return (
     <>
       <header className={classes.header}>
-        <img src={logo} className={classes.logo} alt="SimpleOne" />
+        {(isMobile || isSmallMobile) ?
+          <NavigationButton type="menu" onClick={() => setIsSidebarOpen(!isSidebarOpen)} />
+          :
+          <img src={logo} className={classes.logo} alt="SimpleOne" />}
         <div className={classes.rightPart}>
-          <SearchField className={classes.headerSearchField} placeholder="Поиск" icon="search" />
-          <CurrentUser avatar={avatarExample} userName="Максим Галактионов" />
+          {(isMobile || isSmallMobile) ?
+            <>
+              <CurrentUser avatar={avatarExample} />
+            </>
+            :
+            <>
+              <SearchField className={classes.headerSearchField} placeholder="Поиск" icon="search" />
+              <CurrentUser avatar={avatarExample} userName="Максим Галактионов" />
+            </>
+          }
           <IconButton icon="settings" className={classes.settingsButton} />
         </div>
       </header>
       <main className={classes.main}>
-        <section className={classes.navigationBar}>
+        {(isMobile || isSmallMobile) ? null : <section className={classes.navigationBar}>
           <NavigationButton type="menu" onClick={() => setIsSidebarOpen(!isSidebarOpen)} />
           <NavigationButton type="favourite" />
-        </section>
+        </section>}
         <section className={isSidebarOpen ? classes.sidebar : classes.hidden}>
           <div className={classes.filterContainer}>
             <SearchField className={classes.filterSearchField} placeholder="Поиск по меню" icon="filter" />
@@ -58,11 +79,17 @@ export default function Home() {
           <section className={classes.upperMenu}>
             <div className={classes.upperMenuLeftSide}>
               <h3 className={classes.upperMenuLeftSideTitle}>Подзадача</h3>
-              <TextButton>Создать</TextButton>
+              {(isSmallMobile || isMobile) ? null : <TextButton>Создать</TextButton>}
             </div>
             <div className={classes.upperMenuRightSide}>
-              <TextButton accent className={classes.saveButton}>Сохранить</TextButton>
-              <TextButton>Сохранить и выйти</TextButton>
+              {(isSmallMobile || isMobile) ?
+                <TextButton>Создать</TextButton>
+                :
+                <>
+                  <TextButton accent className={classes.saveButton}>Сохранить</TextButton>
+                  <TextButton>Сохранить и выйти</TextButton>
+                </>
+              }
             </div>
           </section>
           <section className={classes.table}>
