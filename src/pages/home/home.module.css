@@ -106,6 +106,19 @@
     margin-bottom: 16px;
 }
 
+.sticky {
+    position: fixed;
+    padding: 16px;
+    margin-left: 343px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: #fff;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.04);
+    justify-content: flex-start;
+}
+
 .upperMenuLeftSide {
     display: flex;
     flex-direction: row;
@@ -128,6 +141,11 @@
     flex-wrap: nowrap;
     justify-content: flex-end;
     align-items: center;
+}
+
+.upperMenuRightSideSticky {
+    margin: 0 auto;
+    padding-right: 16px;
 }
 
 .saveButton {

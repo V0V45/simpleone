@@ -14,6 +14,7 @@ import { useDeviceDetect } from "../../hooks/useDeviceDetect";
 
 export default function Home() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isSticky, setIsSticky] = useState(false);
   const { isSmallScreen, isMobile, isSmallMobile } = useDeviceDetect();
 
   useEffect(() => {
@@ -23,6 +24,19 @@ export default function Home() {
       setIsSidebarOpen(true);
     }
   }, [isSmallScreen, isMobile, isSmallMobile]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 106) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
@@ -76,12 +90,12 @@ export default function Home() {
           </div>
         </section>
         <section className={classes.mainContent}>
-          <section className={classes.upperMenu}>
+          <section className={`${classes.upperMenu} ${isSticky && !isSmallScreen && !isMobile && !isSmallMobile && classes.sticky}`}>
             <div className={classes.upperMenuLeftSide}>
               <h3 className={classes.upperMenuLeftSideTitle}>Подзадача</h3>
               {(isSmallMobile || isMobile) ? null : <TextButton>Создать</TextButton>}
             </div>
-            <div className={classes.upperMenuRightSide}>
+            <div className={`${classes.upperMenuRightSide} ${isSticky && !isSmallScreen && !isMobile && !isSmallMobile && classes.upperMenuRightSideSticky}`}>
               {(isSmallMobile || isMobile) ?
                 <TextButton>Создать</TextButton>
                 :
