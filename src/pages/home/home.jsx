@@ -10,11 +10,14 @@ import Spoiler from "../../components/spoiler/spoiler";
 import TextButton from "../../components/text-button/text-button";
 import TextField from "../../components/textfield/textfield";
 import TextFieldObjective from "../../components/textfield-objective/textfield-objective";
-import { useDeviceDetect } from "../../hooks/useDeviceDetect";
+import { useDeviceDetect } from "../../functions/useDeviceDetect";
+import Modal from "react-modal";
+import ModalWindow from "../../components/modal-window/modal-window";
 
 export default function Home() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [isSticky, setIsSticky] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const { isSmallScreen, isMobile, isSmallMobile } = useDeviceDetect();
 
   useEffect(() => {
@@ -37,6 +40,14 @@ export default function Home() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  function openModal() {
+    setIsModalOpen(true);
+  }
+
+  function closeModal() {
+    setIsModalOpen(false);
+  }
 
   return (
     <>
@@ -93,7 +104,7 @@ export default function Home() {
           <section className={`${classes.upperMenu} ${isSticky && !isSmallScreen && !isMobile && !isSmallMobile && classes.sticky}`}>
             <div className={classes.upperMenuLeftSide}>
               <h3 className={classes.upperMenuLeftSideTitle}>Подзадача</h3>
-              {(isSmallMobile || isMobile) ? null : <TextButton>Создать</TextButton>}
+              {(isSmallMobile || isMobile) ? null : <TextButton onClick={openModal}>Создать</TextButton>}
             </div>
             <div className={`${classes.upperMenuRightSide} ${isSticky && !isSmallScreen && !isMobile && !isSmallMobile && classes.upperMenuRightSideSticky}`}>
               {(isSmallMobile || isMobile) ?
@@ -120,13 +131,14 @@ export default function Home() {
             <TextFieldObjective className={classes.coordinating} mb title="Согласующие" isRemoveButtonAvailable />
             <TextField className={classes.whenOpened} mb title="Когда открыто" button="calendar" />
             <TextField className={classes.whenCreated} mb title="Когда создано" button="calendar" />
-            <TextFieldObjective className={classes.whoOpened} mb title="Кем открыто" />
-            <TextFieldObjective className={classes.whoCreated} mb title="Кем создано" />
+            <TextFieldObjective className={classes.whoOpened} mb={(isSmallScreen || isMobile || isSmallMobile) ? true : false} title="Кем открыто" />
+            <TextFieldObjective className={classes.whoCreated} mb={(isSmallScreen || isMobile || isSmallMobile) ? true : false} title="Кем создано" />
           </section>
         </section>
       </main>
+      <Modal isOpen={isModalOpen} onRequestClose={closeModal} className={classes.modal} overlayClassName={classes.modalOverlay}>
+        <ModalWindow onRequestClose={closeModal} />
+      </Modal>
     </>
   );
 }
-
-

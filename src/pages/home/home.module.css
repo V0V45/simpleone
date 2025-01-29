@@ -263,3 +263,32 @@
 .whoCreated {
     grid-area: whoCreated;
 }
+
+.modal {
+    position: absolute;
+    top: 16px;
+    left: 16%;
+    right: 16%;
+    bottom: 16px;
+    background-color: #fff;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 4px;
+    outline: none;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.16), 0 4px 6px 0 rgba(0, 0, 0, 0.1);
+}
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(11, 12, 14, 0.4);
+}
+
+@media screen and (max-width: 767px) {
+    .modalOverlay {
+        position: relative;
+    }
+}
